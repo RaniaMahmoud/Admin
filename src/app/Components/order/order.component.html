@@ -1,0 +1,62 @@
+<!-- <div class="row g-0">
+    <div class="col-md-8 col-12">
+        <div class="row g-0">
+            <div class="col-md-1 col-1">
+                <img [src]="store.Logo" class="img-fluid rounded-circle mt-4" style="width: 4vmax; height: 4vmax;"
+                    alt="...">
+            </div>
+            <div class="col-md-11 col-8">
+                <h1 class="mt-md-4 mt-3">{{store.Name}}</h1>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- <div class="col-10">
+    <section class="ps-4">
+      <app-home></app-home>
+    </section>
+</div> -->
+<div class="row g-0">
+  <!-- <div class="col-md-1 col-12 mt-md-4 mt-0">
+    <label name="" id="" class="ms-md-4 mt-2"><b>Name</b> </label>
+  </div>
+  <div class="col-md-4 col-11">
+    <input
+      name=""
+      id=""
+      class="form-control ms-md-2 mt-4 ms-0 w-75"
+      type="text"
+      [value]="ClientName"
+    />
+  </div> -->
+  <!--pe-5 pt-5 ps-md-0-->
+  <div class="col-md-7 ps-5 pe-md-5 pe-0 col-12 mt-md-4 mt-0">
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      [(ngModel)]="SelectedID"
+    >
+      <option value="0" selected>Select Category</option>
+      <option
+        *ngFor="let item of CategoryList"
+        id="{{ item.id }}"
+        [value]="item.id"
+      >
+        {{ item.Name }}
+      </option>
+    </select>
+  </div>
+</div>
+<!-- <div class="row g-0">
+    <div class="col-md-12 mt-md-3">
+        <p class="placeholder-glow mt-3 ps-4">
+            <b>Credit Card:
+            </b> {{CreditCard| creditCard }}
+        </p>
+        <p class=" placeholder-glow mt-3 ps-4"><b>Birth Date:
+            </b>{{NationalID| egynationaID:'FullDate' }}
+        </p>
+    </div>
+</div> -->
+<hr class="ms-5 me-5" />
+<hr class="ms-5 me-5" />

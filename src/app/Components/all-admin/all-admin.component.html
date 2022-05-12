@@ -1,0 +1,26 @@
+<section class="container my-3" style="width: 100%;">
+  <div class="row g-0">
+    <div class="col-12">
+        <h2 class="ms-5"><b>All Admins</b></h2>
+    </div>
+  </div>
+  <div class="row g-0">
+    <div class="col-12 p-5 table-responsive">
+      <!-- On tables *ngIf="IsPurshased">-->
+      <table class="table">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Password</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of admins">
+            <td>{{item.UserName}}</td>
+            <td>{{item.Password}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
