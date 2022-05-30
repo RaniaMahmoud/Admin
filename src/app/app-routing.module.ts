@@ -17,6 +17,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CardComponent } from './Components/card/card.component';
 import { AdminHomeComponent } from './Components/admin-home/admin-home.component';
 import { AllProductsComponent } from './Components/all-products/all-products.component';
+import { AllAdminComponent } from './Components/all-admin/all-admin.component';
+import { CommonModule } from '@angular/common';
+import { MatTableModule } from '@angular/material/table';
+import { MaterialModule } from './material/material.module';
+import { FormsModule } from '@angular/forms';
+import { AuthorizationGuard } from './Guards/authorization.guard';
 /*i)	Home (static page with any data)
 ii)	About us (static page with any data)
 iii)	Contact us (static page with any data)
@@ -28,14 +34,15 @@ const routes: Routes = [
     component: LayOutComponent,
     children: [
       { path: '', redirectTo: '/Home', pathMatch: 'full' },
-      { path: 'Home', component: AdminHomeComponent },
+      { path: 'Home', component: AllProductsComponent,canActivate : [AuthorizationGuard] },
       { path: 'AboutUs', component: AboutUsComponent },
       { path: 'ContactUs', component: ContactUsComponent },
-      { path: 'Products', component: AllProductsComponent },
+      { path: 'Products', component: AllProductsComponent, canActivate : [AuthorizationGuard] },
       { path: 'Products/Edit/:id', component: NewProductComponent },
       { path: 'Card', component: CardComponent },
       { path: 'Admin/insertProduct', redirectTo: '/Admin', pathMatch: 'full' },
-      { path: 'Admin', component: NewProductComponent },
+      { path: 'Admin', component: NewProductComponent , canActivate : [AuthorizationGuard]},
+      { path: 'AllAdmin', component: AllAdminComponent, canActivate : [AuthorizationGuard]},
     ],
   },
   {
@@ -62,7 +69,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), BrowserModule, MatDialogModule],
+  imports: [RouterModule.forRoot(routes), BrowserModule, MatDialogModule,CommonModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

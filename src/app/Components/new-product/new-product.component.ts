@@ -98,7 +98,7 @@ export class NewProductComponent implements OnInit {
     this.APIProductsService.Upload(formData).subscribe(
       product=>{
         console.log(product);
-        this.router.navigate(['/Order'])
+        this.router.navigate(['/Products'])
       }
     );
 
@@ -123,7 +123,7 @@ export class NewProductComponent implements OnInit {
     formData.append('product', JSON.stringify(this.ProductViewM));
     this.APIProductsService.updateProduct(id, formData).subscribe(product => {
         console.log("Edit " + product);
-        this.router.navigate(['/Order'])
+        this.router.navigate(['/Products'])
     });
   }
 

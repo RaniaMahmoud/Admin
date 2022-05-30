@@ -2,13 +2,18 @@
     <!--fluid-->
     <img src="../../assets/Storelogo.png" class="img-thumbnail rounded-circle" style="width: 7vmax; height: 7vmax;" alt="">
     <div>
-    </div>  
+    </div>
     <nav class="nav flex-column mt-3">
         <li class="nav-item">
-            <button class="nav-link" style="width: 100%;" routerLink="/Products" routerLinkActive="active">All Product</button>
+          <button mat-raised-button class="nav-link" style="width: 100%;" routerLink="/Admin" routerLinkActive="active" color="primary">New Product</button>
         </li>
+        <br>
         <li class="nav-item">
-            <button class="nav-link" style="width: 100%;" routerLink="/Products" routerLinkActive="active">All Admins</button>
+          <button mat-raised-button class="nav-link" style="width: 100%;" routerLink="/Products" routerLinkActive="active" color="primary">All Product</button>
+        </li>
+        <br>
+        <li class="nav-item">
+          <button mat-raised-button class="nav-link" style="width: 100%;" routerLink="/AllAdmin" routerLinkActive="active" color="primary">All Admins</button>
         </li>
       </nav>
 </section>

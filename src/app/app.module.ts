@@ -36,6 +36,7 @@ import { ProductDetailsPopUpComponent } from './Components/product-details-pop-u
 import { AdminHomeComponent } from './Components/admin-home/admin-home.component';
 import { AllProductsComponent } from './Components/all-products/all-products.component';
 import { AdminLayOutComponent } from './Components/admin-lay-out/admin-lay-out.component';
+import { AllAdminComponent } from './Components/all-admin/all-admin.component';
 
 @NgModule({
   declarations: [
@@ -46,12 +47,12 @@ import { AdminLayOutComponent } from './Components/admin-lay-out/admin-lay-out.c
     ProductCardDirective,
     EgynationaIDPipe,
     CreditCardPipe,
-    
+
     HomeComponent,
     ErrorComponent,
     AboutUsComponent,
     ContactUsComponent,
-    
+    AllAdminComponent,
     RegisterComponent,
     LayOutComponent,
     LoginComponent,

@@ -11,9 +11,9 @@ import { environment } from 'src/environments/environment';
 export class HeaderComponent implements OnInit {
   LogedIn:boolean;
   Count: number;
-  
+
   constructor(private router: Router,
-    private dataService: DataService) { 
+    private dataService: DataService) {
     this.LogedIn = environment.ISLogin;
     this.Count = parseInt(localStorage.getItem('CardItems')!);
     //this.getData();
@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
     this.LogedIn=environment.ISLogin;
     console.log(this.LogedIn)
     localStorage.removeItem("Token");
-    this.router.navigate(['/Home']);
+    this.router.navigate(['/AllAdmin']);
   }
 
   getData() {

@@ -8,6 +8,7 @@ import { LogIn } from '../ViewModels/LogIn-view-model';
 import { AuthData } from '../ViewModels/AuthData-view-model';
 import { User } from '../ViewModels/user-view-model';
 import { Admin } from '../ViewModels/AdminData-view-model';
+import { AdminViewModelAPI } from '../ViewModels/AdminViewModelAPI';
 
 @Injectable({
   providedIn: 'root'
@@ -39,7 +40,7 @@ export class APIUsersService {
     console.log(JSON.stringify(user))
     return this.httpClient.post<User>(`${environment.APINewURL}/Account/Register`,JSON.stringify(user),this.httpOptions);
   }
-  
+
   LogIn(user:LogIn):Observable<AuthData>{
     return this.httpClient.post<AuthData>(`${environment.APINewURL}/Account/logInAdmin`,JSON.stringify(user),this.httpOptions)
   }
@@ -48,7 +49,7 @@ export class APIUsersService {
     console.log(JSON.stringify(user))
     return this.httpClient.post<Admin>(`${environment.APINewURL}/Account/RegisterAdmin`,JSON.stringify(user),this.httpOptions);
   }
-  
+
   AdminLogIn(user:LogIn):Observable<AuthData>{
     return this.httpClient.post<AuthData>(`${environment.APINewURL}/Account/logIn`,JSON.stringify(user),this.httpOptions)
   }
@@ -66,9 +67,9 @@ export class APIUsersService {
     return this.httpClient.patch<User>(`${environment.APINewURL}/Account/${UserEditID}`,JSON.stringify(User),this.httpOptions);
   }
 
-  AllAdmins():Observable<LogIn[]>
+  AllAdmins():Observable<AdminViewModelAPI[]>
   {
-    return this.httpClient.get<LogIn[]>(`${environment.APINewURL}/Account/`,this.httpOptions);
+    return this.httpClient.get<AdminViewModelAPI[]>(`${environment.APINewURL}/Account`,this.httpOptions);
   }
 
   deleteUser(ID:number):Observable<User>
